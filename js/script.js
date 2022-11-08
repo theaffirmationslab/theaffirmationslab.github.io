@@ -97,8 +97,12 @@ allLinks.forEach(function (link) {
     if (href !== "#" && href.startsWith("#")) {
       const sectionEl = document.querySelector(href);
       sectionEl.scrollIntoView({ behavior: "smooth" });
-    }
-
+    };
+    // Open in new tab and add target attribute
+    if (href !== "#") {
+      link.target = '_blank';
+      window.open(link.href, '_blank');
+    };
     // Close mobile naviagtion
     if (link.classList.contains("main-nav-link"))
       headerEl.classList.toggle("nav-open");
