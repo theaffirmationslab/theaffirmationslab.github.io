@@ -99,7 +99,7 @@ allLinks.forEach(function (link) {
       sectionEl.scrollIntoView({ behavior: "smooth" });
     };
     // Open in new tab and add target attribute
-    if (href !== "#") {
+    if (href !== "#" && href.startsWith("https")) {
       link.target = '_blank';
       window.open(link.href, '_blank');
     };
